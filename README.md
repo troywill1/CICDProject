@@ -4,8 +4,8 @@ This is a repository to store files related to the Udacity Azure Engineer Nanode
 
 ## Project Plan
 
-[Trello board for this project] [1]
-[Google Sheets spreadsheet of the original and final project plan] [2]
+[Trello board for this project][1]
+[Google Sheets spreadsheet of the original and final project plan][2]
 
 ## Instructions
 
