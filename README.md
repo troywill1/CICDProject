@@ -1,12 +1,11 @@
-# Overview
+# Overview of CI/CD Project
 
-<TODO: complete this with an overview of your project>
+This is a repository to store files related to the Udacity Azure Engineer Nanodegree CI/CD Project. This project will deploy a Flask Machine Learning application that will run in Azure App Services.
 
 ## Project Plan
-<TODO: Project Plan
 
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+* [Trello board for this project] [1]
+* [Google Sheets spreadsheet of the original and final project plan] [2]
 
 ## Instructions
 
@@ -19,7 +18,16 @@
 
 * Project cloned into Azure Cloud Shell
 
+Screenshot showing the cloned GitHub repository in Azure Cloud Shell:
+![Alt text](/Cloned_Repo_Azure.png?raw=true "Cloned_Repo_Azure.png")
+
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
+
+Screenshot displaying the passing tests from running `make all` in Azure Cloud Shell:
+![Alt text](/Cloud_Shell_Setup_Passing_Tests.png?raw=true "Cloud_Shell_Setup_Passing_Tests.png")
+
+Screenshot demonstrating passing tests during a GitHub Actions build:
+![Alt text](/Passing_GitHub_Actions_Build.png?raw=true "Passing_GitHub_Actions_Build.png")
 
 * Output of a test run
 
@@ -38,7 +46,7 @@ Port: 443
 
 * Output of streamed log files from deployed application
 
-> 
+>
 
 ## Enhancements
 
@@ -48,14 +56,5 @@ Port: 443
 
 <TODO: Add link Screencast on YouTube>
 
-# CICDProject
-Repository to store files related to the Udacity Azure Engineer Nanodegree CI/CD Project. This will deploy a Flask Machine Learning app that will run in Azure App Services.
-
-Screenshot showing the cloned GitHub repository in Azure Cloud Shell:
-![Alt text](/Cloned_Repo_Azure.png?raw=true "Cloned_Repo_Azure.png")
-
-Screenshot displaying the passing tests from running `make all` in Azure Cloud Shell:
-![Alt text](/Cloud_Shell_Setup_Passing_Tests.png?raw=true "Cloud_Shell_Setup_Passing_Tests.png")
-
-Screenshot demonstrating passing tests during a GitHub Actions build:
-![Alt text](/Passing_GitHub_Actions_Build.png?raw=true "Passing_GitHub_Actions_Build.png")
+[1]: https://trello.com/b/GWL8MO8g/building-ci-cd-pipeline
+[2]: https://docs.google.com/spreadsheets/d/1QMoPynXT3BXGuPUoEhMU0OHgs3Zs2ru5FsCxnYTjpDw/edit?usp=sharing
