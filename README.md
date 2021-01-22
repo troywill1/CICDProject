@@ -10,8 +10,8 @@ This is a repository to store files related to the Udacity Azure Engineer Nanode
 
 ## Instructions
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
+Architectural Diagram:
+![Alt text](/CI_CD_Azure_Diagram.png?raw=true "CI_CD_Azure_Diagram.png")
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
