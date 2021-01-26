@@ -19,6 +19,12 @@ Architectural Diagram:
 
 * Project running on Azure App Service
 
+Screenshot showing the service running in Azure App Services:
+![Alt text](/Azure_App_Services.png?raw=true "Azure_App_Services.png")
+
+Screenshot of the Sklearn application home page running in Azure App Services:
+![Alt text](/Sklearn_Home.png?raw=true "Sklearn_Home.png")
+
 * Project cloned into Azure Cloud Shell
 
 Screenshot showing the cloned GitHub repository in Azure Cloud Shell:
