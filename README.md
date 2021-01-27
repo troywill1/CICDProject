@@ -4,9 +4,9 @@ This is a repository to store files related to the Udacity Azure Engineer Nanode
 
 ## Project Plan
 
-[Trello board for this project][1]
+[Trello board for this project.][1]
 
-[Google Sheets spreadsheet of the original and final project plan][2]
+[Google Sheets spreadsheet of the original and final project plan.][2]
 
 ## Instructions
 
@@ -18,9 +18,8 @@ The diagrams below describe, at a high level, Contiuous Integration (CI) and Con
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
-<TODO: Steps to copy or fork this repository>
 
-1. Fork this repository. [Reference the official GtiHub documentation for instructions on forking a repository][3]
+1. Fork this repository. [Reference the official GtiHub documentation for instructions on forking a repository.][3]
 
 <TODO: Steps to create an Azure App service>
 
