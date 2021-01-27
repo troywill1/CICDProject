@@ -20,6 +20,8 @@ The diagrams below describe, at a high level, Contiuous Integration (CI) and Con
 
 <TODO: Steps to copy or fork this repository>
 
+1. Fork this repository. [Reference the official GtiHub documentation for instructions on forking a repository][3]
+
 <TODO: Steps to create an Azure App service>
 
 * Project running on Azure App Service
@@ -84,3 +86,4 @@ Port: 443
 
 [1]: https://trello.com/b/GWL8MO8g/building-ci-cd-pipeline
 [2]: https://docs.google.com/spreadsheets/d/1QMoPynXT3BXGuPUoEhMU0OHgs3Zs2ru5FsCxnYTjpDw/edit?usp=sharing
+[3]: https://docs.github.com/en/github/getting-started-with-github/fork-a-repo
