@@ -1,6 +1,6 @@
 # Overview of CI/CD Project
 
-This is a repository to store files related to the Udacity Azure Engineer Nanodegree CI/CD Project. This project will deploy a Flask Machine Learning application that will run in Azure App Services.
+This is a repository to store files related to the Udacity Azure Engineer Nanodegree Continuous Integration/Continuous Deployment (CI/CD) Project. This project will deploy a Flask Machine Learning application that will run in Azure App Services.
 
 ## Project Plan
 
