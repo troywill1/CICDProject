@@ -16,27 +16,59 @@ The diagrams below describe, at a high level, Contiuous Integration (CI) and Con
 
 ![Alt text](/CD_Azure_Diagram.png?raw=true "CD_Azure_Diagram.png")
 
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
+<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:>
 
+1. Fork this repository to a personal GitHub account. Reference the official [GtiHub documentation][3] for instructions on forking a repository.
 
-1. Fork this repository. [Reference the official GtiHub documentation for instructions on forking a repository.][3]
+2. Make sure that the Azure Pipelines application is installed and enabled on GitHub. The screenshot below shows that Azure Pipelines is installed and integrated with the cloned repository. For instructions on installing applications from the GitHub Marketplace, see the official [GitHub documentation][5]. Search for "Azure Pipelines", install using the "free" billing option and enable for all repositories.
+
+![Alt text](/GitHub_Apps.png?raw=true "GitHub_Apps.png")
+
+* Configure GitHub Actions
 
 <TODO: Steps to create an Azure App service>
 
-* Project running on Azure App Service
+2. From the [Azure Portal][4] launch a Bash Azure Cloud Shell.
+
+![Alt text](/Launch_Shell.png?raw=true "Launch_Shell.png")
+
+![Alt text](/Bash_Shell.png?raw=true "Bash_Shell.png")
+
+3. Setup a virtual environment with Python's `virtualenv` tool (VENV) and activate the environment.
+
+```bash
+python3 -m venv ~/.flask-ml-azure
+source ~/.flask-ml-azure/bin/activate
+```
+
+4. Obtain the GitHub Repository location.
+
+![Alt text](/Clone_SSH.png?raw=true "Clone_SSH.png")
+
+5. Create a directory, using the `mkdir` command, to house your cloned repository.
+
+```bash
+(.flask-ml-azure) troy@Azure:~/repos$ mkdir CICDProject
+```
+
+6. Clone the repository that was forked in Step #1. The command to run from the Bash shell will be similar to the following. Replace the GitHub repository as needed.
+
+```bash
+git clone git@github.com:troywill1/CICDProject.git
+```
+
+<TODO: Steps to clone a repo in Azure Cloud Shell>
+
+After running the above clone command in Azure Cloud Shell, the output should be similar to this:
+![Alt text](/Cloned_Repo_Azure.png?raw=true "Cloned_Repo_Azure.png")
+
+* AZ WEBAPP
 
 Screenshot showing the service running in Azure App Services:
 ![Alt text](/Azure_App_Services.png?raw=true "Azure_App_Services.png")
 
 Screenshot of the Sklearn application home page running in Azure App Services:
 ![Alt text](/Sklearn_Home.png?raw=true "Sklearn_Home.png")
-
-* Project cloned into Azure Cloud Shell
-
-<TODO: Steps to clone a repo in Azure Cloud Shell>
-
-Screenshot showing the cloned GitHub repository in Azure Cloud Shell:
-![Alt text](/Cloned_Repo_Azure.png?raw=true "Cloned_Repo_Azure.png")
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 
@@ -86,3 +118,5 @@ Port: 443
 [1]: https://trello.com/b/GWL8MO8g/building-ci-cd-pipeline
 [2]: https://docs.google.com/spreadsheets/d/1QMoPynXT3BXGuPUoEhMU0OHgs3Zs2ru5FsCxnYTjpDw/edit?usp=sharing
 [3]: https://docs.github.com/en/github/getting-started-with-github/fork-a-repo
+[4]: https://portal.azure.com
+[5]: https://docs.github.com/en/github/customizing-your-github-workflow/installing-an-app-in-your-organization
