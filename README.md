@@ -1,4 +1,4 @@
-![CI](https://github.com/troywill1/CICDProject/workflows/CI/badge.svg)
+![Python application test with Github Actions](https://github.com/troywill1/CICDProject/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)
 
 # Overview of CI/CD Project
 
