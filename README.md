@@ -1,3 +1,5 @@
+![CI](https://github.com/troywill1/CICDProject/workflows/CI/badge.svg)
+
 # Overview of CI/CD Project
 
 This is a repository to store files related to the Udacity Azure Engineer Nanodegree Continuous Integration/Continuous Deployment (CI/CD) Project. This project will deploy a Flask Machine Learning application that will run in Azure App Services.
@@ -20,11 +22,11 @@ The diagrams below describe, at a high level, Contiuous Integration (CI) and Con
 
 1. Fork this repository to a personal GitHub account. Reference the official [GtiHub documentation][3] for instructions on forking a repository.
 
+* Configure GitHub Actions
+
 2. Make sure that the Azure Pipelines application is installed and enabled on GitHub. The screenshot below shows that Azure Pipelines is installed and integrated with the cloned repository. For instructions on installing applications from the GitHub Marketplace, see the official [GitHub documentation][5]. Search for "Azure Pipelines", install using the "free" billing option and enable for all repositories.
 
 ![Alt text](/GitHub_Apps.png?raw=true "GitHub_Apps.png")
-
-* Configure GitHub Actions
 
 <TODO: Steps to create an Azure App service>
 
