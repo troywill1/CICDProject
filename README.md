@@ -12,7 +12,7 @@ This is a repository to store files related to the Udacity Azure Engineer Nanode
 
 ## Instructions
 
-The diagrams below describe, at a high level, Contiuous Integration (CI) and Continuous Deployment (CD) and the relationships between components.
+The diagrams below describe, at a high level, *Contiuous Integration* (CI) and *Continuous Deployment* (CD) and the relationships between components.
 
 ![Alt text](/CI_Azure_Diagram.png?raw=true "CI_Azure_Diagram.png")
 
@@ -24,7 +24,9 @@ The diagrams below describe, at a high level, Contiuous Integration (CI) and Con
 
 <TODO: Steps to configure GitHub Actions and show passing tests>
 
-2. Configure the build server. For this, we will use GitHub Actions. In the repository that was just forked on GitHub, click "Actions" and then "Skip this and set up a workflow yourself".
+## Continuous Integration (CI)
+
+2. Configure the build server. For this, we will use GitHub Actions. In the repository that was just forked on GitHub, click *Actions* and then *Skip this and set up a workflow yourself*.
 
 ![Alt text](/GitHub_Actions.png?raw=true "GitHub_Actions.png")
 
@@ -62,11 +64,11 @@ jobs:
 		make test
 ```
 
-And commit `main.yml`.
+Then commit the file `main.yml`.
 
 ![Alt text](/Commit_YAML.png?raw=true "Commit_YAML.png")
 
-Now, whenever a change is made to the repository, the build server, GitHub Actions, will run the workflow in `main.yml`. This is "Continuous Integration" or "CI".
+Now, whenever a change is made to the repository, the build server, GitHub Actions, will run the workflow in `main.yml`. This is *Continuous Integration* or *CI*.
 
 ![Alt text](/Actions_Results_1.png?raw=true "Actions_Results_1.png")
 
@@ -84,11 +86,13 @@ Copy the Markdown code and add it to the `README.md` file.
 
 ![Alt text](/Copy_Markdown.png?raw=true "Copy_Markdown.png")
 
-There will now be a badge in `README.md` displaying the current "Continuous Integration" status.
+There will now be a badge in `README.md` displaying the current *Continuous Integration* status.
 
 ![Python application test with Github Actions](https://github.com/troywill1/CICDProject/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)
 
-5. Make sure that the Azure Pipelines application is installed and enabled on GitHub. The screenshot below shows that Azure Pipelines is installed and integrated with the cloned repository. For instructions on installing applications from the GitHub Marketplace, see the official [GitHub documentation][5]. Search for "Azure Pipelines", install using the "free" billing option and enable for all repositories.
+## Continuous Delivery (CD)
+
+5. Make sure that the *Azure Pipelines* application is installed and enabled on GitHub. The screenshot below shows that *Azure Pipelines* is installed and integrated with the cloned repository. For instructions on installing applications from the GitHub Marketplace, see the official [GitHub documentation][5]. Search for "Azure Pipelines", install using the "free" billing option and enable for all repositories.
 
 ![Alt text](/GitHub_Apps.png?raw=true "GitHub_Apps.png")
 
@@ -103,8 +107,8 @@ There will now be a badge in `README.md` displaying the current "Continuous Inte
 7. Setup a virtual environment with Python's `virtualenv` tool (VENV) and activate the environment.
 
 ```bash
-python3 -m venv ~/.flask-ml-azure
-source ~/.flask-ml-azure/bin/activate
+python3 -m venv ~/repos/VENV
+source ~/repos/VENV/bin/activate
 ```
 
 8. Obtain the GitHub Repository location.
@@ -114,7 +118,7 @@ source ~/.flask-ml-azure/bin/activate
 9. Create a directory, using the `mkdir` command, to house your cloned repository.
 
 ```bash
-(.flask-ml-azure) troy@Azure:~/repos$ mkdir CICDProject
+(VENV) troy@Azure:~/repos$ mkdir CICDProject
 ```
 
 10. Clone the repository that was forked in Step #1. The command to run from the Bash shell will be similar to the following. Replace the GitHub repository name as needed.
@@ -128,15 +132,26 @@ After running the above clone command in Azure Cloud Shell, the output should be
 
 11. Run the command `make install` from Azure Cloud Shell.
 
+![Alt text](/Make_Install_1.png?raw=true "Make_Install_1.png")
+![Alt text](/Make_Install_2.png?raw=true "Make_Install_2.png")
+
 <TODO: Steps to create an Azure App service>
 
-* AZ WEBAPP
+12. Create an App Service and initially deploy the app in Azure Cloud Shell.
 
-Screenshot showing the service running in Azure App Services:
-![Alt text](/Azure_App_Services.png?raw=true "Azure_App_Services.png")
+```bash
+az webapp up -n <your-appservice>
+```
 
-Screenshot of the Sklearn application home page running in Azure App Services:
+13. Verify that the application works by navigating to the deployed URL.
+
+Browse to `https://<your-appservice>.azurewebsites.net/` and you should see similar output to the screenshot below.
+
 ![Alt text](/Sklearn_Home.png?raw=true "Sklearn_Home.png")
+
+Screenshot showing the service running in Azure App Services from the [Azure Portal][4].
+
+![Alt text](/Azure_App_Services.png?raw=true "Azure_App_Services.png")
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 
