@@ -92,6 +92,8 @@ There will now be a badge in `README.md` displaying the current *Continuous Inte
 
 ## Continuous Delivery (CD)
 
+<TODO: Steps to configure GitHub for Azure Pipelines>
+
 5. Make sure that the *Azure Pipelines* application is installed and enabled on GitHub. The screenshot below shows that *Azure Pipelines* is installed and integrated with the cloned repository. For instructions on installing applications from the GitHub Marketplace, see the official [GitHub documentation][5]. Search for "Azure Pipelines", install using the "free" billing option and enable for all repositories.
 
 ![Alt text](/GitHub_Apps.png?raw=true "GitHub_Apps.png")
@@ -137,34 +139,72 @@ After running the above clone command in Azure Cloud Shell, the output should be
 
 <TODO: Steps to create an Azure App service>
 
-12. Create an App Service and initially deploy the app in Azure Cloud Shell.
+12. Create an App Service and initially deploy the app in Azure Cloud Shell. This step can also be accomplished in the Azure Portal. Be sure to make the name of the App Service unique.
 
 ```bash
-az webapp up -n <your-appservice>
+az webapp up --sku F1 -n flask-ml-service-troy
 ```
 
 13. Verify that the application works by navigating to the deployed URL.
 
-Browse to `https://<your-appservice>.azurewebsites.net/` and you should see similar output to the screenshot below.
+Browse to `https://<your-appservice>.azurewebsites.net/` and you should see output similar to the screenshot below.
 
 ![Alt text](/Sklearn_Home.png?raw=true "Sklearn_Home.png")
 
-Screenshot showing the service running in Azure App Services from the [Azure Portal][4].
+This is a view of the service running in Azure App Services from the [Azure Portal][4].
 
 ![Alt text](/Azure_App_Services.png?raw=true "Azure_App_Services.png")
 
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
-
 <TODO: Steps to run make all from Azure Clouc Shell>
 
-Screenshot displaying the passing tests from running `make all` in Azure Cloud Shell:
+14. From Azure Cloud Shell, run the `make all` command from the `Makefile`:
+
+```bash
+(VENV) troy@Azure:~/flask-ml-azure-troy$ make all
+```
+
+Output of the passing tests from running the `make all` command in Azure Cloud Shell should be similar to the following:
 ![Alt text](/Cloud_Shell_Setup_Passing_Tests.png?raw=true "Cloud_Shell_Setup_Passing_Tests.png")
 
-* Output of a test run
+15. In the file `make_predict_azure_app.sh`, change the following line to match the URL of the deployed Azure App Service:
 
-<TODO: Steps to configure GitHub for Azure Pipelines>
+```bash
+-X POST https://flask-ml-service-troy.azurewebsites.net:$PORT/predict
+```
+
+16. Now, initiate a test run by executing the script that was just edited, `make_predict_azure.sh`. A successful test run should be similar to this:
+
+![Alt text](/Make_Predict.png?raw=true "Make_Predict.png")
 
 <TODO: Steps to configure a project in Azure Pipelines>
+
+17. Next, create an [Azure DevOps Project][6] and give it a name. Note: Some screenshots will look slightly different as some of these steps have already been completed for the base project/repository.
+
+![Alt text](/DevOps_Create_Project.png?raw=true "DevOps_Create_Project.png")
+
+18. Within the newly created project, under `Project Settings`, create a new service connection via the Azure Resource Manager.
+
+![Alt text](/DevOps_Service_Connection.png?raw=true "DevOps_Service_Connection.png")
+
+![Alt text](/DevOps_Service_Principal.png?raw=true "DevOps_Service_Principal.png")
+
+![Alt text](/DevOps_New_Connect.png?raw=true "DevOps_New_Connect.png")
+
+19. Create a Pipeline from within the Azure DevOps Project.
+
+![Alt text](/DevOps_Create_Pipeline.png?raw=true "DevOps_Create_Pipeline.png")
+
+20. Create the GitHub integration from within the Pipeline.
+
+![Alt text](/DevOps_GitHub.png?raw=true "DevOps_GitHub.png")
+
+21. Select the correct GitHub Repository.
+
+![Alt text](/DevOps_Repo.png?raw=true "DevOps_Repo.png")
+
+22. Select `Python to Linux Web App on Azure` and choose the correct Azure Subscription and Web App Name in the subsequent dialog boxes.
+
+![Alt text](/DevOps_App_Name.png?raw=true "DevOps_App_Name.png")
 
 * Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 
@@ -198,3 +238,4 @@ Port: 443
 [3]: https://docs.github.com/en/github/getting-started-with-github/fork-a-repo
 [4]: https://portal.azure.com
 [5]: https://docs.github.com/en/github/customizing-your-github-workflow/installing-an-app-in-your-organization
+[6]: https://dev.azure.com/
