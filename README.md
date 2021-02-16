@@ -18,11 +18,9 @@ The diagrams below describe, at a high level, *Contiuous Integration* (CI) and *
 
 ![Alt text](/CD_Azure_Diagram.png?raw=true "CD_Azure_Diagram.png")
 
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:>
+[Note: The official Microsoft documentation should be referred to and double checked when setting up CI/CD][7]
 
 1. Fork this repository to a personal GitHub account. Reference the official [GtiHub documentation][3] for instructions on forking a repository.
-
-<TODO: Steps to configure GitHub Actions and show passing tests>
 
 ## Continuous Integration (CI)
 
@@ -92,13 +90,9 @@ There will now be a badge in `README.md` displaying the current *Continuous Inte
 
 ## Continuous Delivery (CD)
 
-<TODO: Steps to configure GitHub for Azure Pipelines>
-
 5. Make sure that the *Azure Pipelines* application is installed and enabled on GitHub. The screenshot below shows that *Azure Pipelines* is installed and integrated with the cloned repository. For instructions on installing applications from the GitHub Marketplace, see the official [GitHub documentation][5]. Search for "Azure Pipelines", install using the "free" billing option and enable for all repositories.
 
 ![Alt text](/GitHub_Apps.png?raw=true "GitHub_Apps.png")
-
-<TODO: Steps to clone a repo in Azure Cloud Shell>
 
 6. From the [Azure Portal][4] launch a Bash Azure Cloud Shell.
 
@@ -137,8 +131,6 @@ After running the above clone command in Azure Cloud Shell, the output should be
 ![Alt text](/Make_Install_1.png?raw=true "Make_Install_1.png")
 ![Alt text](/Make_Install_2.png?raw=true "Make_Install_2.png")
 
-<TODO: Steps to create an Azure App service>
-
 12. Create an App Service and initially deploy the app in Azure Cloud Shell. This step can also be accomplished in the Azure Portal. Be sure to make the name of the App Service unique.
 
 ```bash
@@ -154,8 +146,6 @@ Browse to `https://<your-appservice>.azurewebsites.net/` and you should see outp
 This is a view of the service running in Azure App Services from the [Azure Portal][4].
 
 ![Alt text](/Azure_App_Services.png?raw=true "Azure_App_Services.png")
-
-<TODO: Steps to run make all from Azure Clouc Shell>
 
 14. From Azure Cloud Shell, run the `make all` command from the `Makefile`:
 
@@ -175,8 +165,6 @@ Output of the passing tests from running the `make all` command in Azure Cloud S
 16. Now, initiate a test run by executing the script that was just edited, `make_predict_azure.sh`. A successful test run should be similar to this:
 
 ![Alt text](/Make_Predict.png?raw=true "Make_Predict.png")
-
-<TODO: Steps to configure a project in Azure Pipelines>
 
 17. Next, create an [Azure DevOps Project][6] and give it a name. Note: Some screenshots will look slightly different as some of these steps have already been completed for the base project/repository.
 
@@ -206,28 +194,41 @@ Output of the passing tests from running the `make all` command in Azure Cloud S
 
 ![Alt text](/DevOps_App_Name.png?raw=true "DevOps_App_Name.png")
 
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+Inspecting the Azure Pipeline, this screenshot depicts a deployment to Azure based on a change to the GitHub repository. Steps to demonstrate this automatic deployment to an Azure App Service through Azure Pipelines is below.
 
-* Running Azure App Service from Azure Pipelines automatic deployment
+![Alt text](/DevOps_Pipe_Run.png?raw=true "DevOps_Pipe_Run.png")
 
-<TODO: Steps to show an automatic deployment from Azure Pipelines>
+23. To demonstrate an automatic deployment through Azure Pipelines, make a small change to `app.py` in the GitHub repository and commit the change.
 
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
+![Alt text](/DevOps_Repo_Change.png?raw=true "DevOps_Repo_Change.png")
 
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
+Inspecting the pipeline now shows the build stage is running (to be followed by the deploy stage).
 
-* Output of streamed log files from deployed application
+![Alt text](/DevOps_Running_Pipeline.png?raw=true "DevOps_Running_Pipeline.png")
 
->
+The deployment stage has completed.
+
+![Alt text](/DevOps_Pipeline_Complete.png?raw=true "DevOps_Pipeline_Complete.png")
+
+Details on the deployment of the Azure Web App via Azure Pipelines.
+
+![Alt text](/DevOps_Deploy_Job.png?raw=true "DevOps_Deploy_Job.png")
+
+Navigating to the Web App URL, we see that the change that was made is reflected in the running app.
+
+![Alt text](/DevOps_Change_Proof.png?raw=true "DevOps_Change_Proof.png")
+
+This is a view of the Log Stream from the Azure Portal of the deployment.
+
+![Alt text](/DevOps_Log_Stream.png?raw=true "DevOps_Log_Stream.png")
+
+And, running `make_predict_azure_app.sh` from the Azure Cloud Shell returns a successful prediction.
+
+![Alt text](/DevOps_Final_Predict.png?raw=true "DevOps_Final_Predict.png")
 
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+Additional tests could be created for both Continuous Integration and Continuous Deployment to ensure that the code is operating as expected. Implementing alerts to notify stakeholders of potential issues would also be a benefit. And, making the Flask app easier to interact with from a browser standpoint is a possible enhancement.
 
 ## Demo 
 
@@ -239,3 +240,4 @@ Port: 443
 [4]: https://portal.azure.com
 [5]: https://docs.github.com/en/github/customizing-your-github-workflow/installing-an-app-in-your-organization
 [6]: https://dev.azure.com/
+[7]: https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops
