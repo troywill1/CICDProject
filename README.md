@@ -230,9 +230,9 @@ And, running `make_predict_azure_app.sh` from the Azure Cloud Shell returns a su
 
 Additional tests could be created for both Continuous Integration and Continuous Deployment to ensure that the code is operating as expected. Implementing alerts to notify stakeholders of potential issues would also be a benefit. And, making the Flask app easier to interact with from a browser standpoint is a possible enhancement.
 
-## Demo 
+## Demo Video
 
-<TODO: Add link Screencast on YouTube>
+[YouTube Video Demonstration.][8]
 
 [1]: https://trello.com/b/GWL8MO8g/building-ci-cd-pipeline
 [2]: https://docs.google.com/spreadsheets/d/1QMoPynXT3BXGuPUoEhMU0OHgs3Zs2ru5FsCxnYTjpDw/edit?usp=sharing
@@ -241,3 +241,4 @@ Additional tests could be created for both Continuous Integration and Continuous
 [5]: https://docs.github.com/en/github/customizing-your-github-workflow/installing-an-app-in-your-organization
 [6]: https://dev.azure.com/
 [7]: https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops
+[8]: https://youtu.be/Znd5jhDdbdQ
